@@ -1,7 +1,9 @@
 <template>
   <q-page class="flex flex-center">
-    <q-table></q-table>
+    <Table />
   </q-page>
 </template>
 
-<script setup></script>
+<script setup>
+import Table from "components/Table.vue";
+</script>

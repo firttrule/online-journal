@@ -11,16 +11,16 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> Журнал группы 21 П </q-toolbar-title>
+        <q-toolbar-title> Журнал дежурств группы 21 П </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item clickable v-ripple>
-          <q-item-section>Журнал</q-item-section> </q-item
-        ><q-item clickable v-ripple>
-          <q-item-section>Тест</q-item-section>
+        <q-item to="/" exact clickable v-ripple>
+          <q-item-section>Выбор дежурного</q-item-section> </q-item
+        ><q-item to="/full" exact clickable v-ripple>
+          <q-item-section>Полный журнал</q-item-section>
         </q-item>
       </q-list>
     </q-drawer>

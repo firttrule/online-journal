@@ -35,13 +35,19 @@ import {
   doc,
   updateDoc,
   increment,
+  orderBy,
+  query,
 } from "firebase/firestore";
 
-const studentsCollectionRef = collection(db, "students");
+const studentsQCRef = query(
+  collection(db, "students"),
+  orderBy("count", "desc")
+);
+const studentsCRef = collection(db, "students");
 const students = ref([]);
 
 onMounted(() => {
-  onSnapshot(studentsCollectionRef, (querySnapshot) => {
+  onSnapshot(studentsQCRef, (querySnapshot) => {
     const fbStudents = [];
     querySnapshot.forEach((doc) => {
       const student = {
@@ -56,14 +62,14 @@ onMounted(() => {
 });
 
 const inc = async (student) => {
-  await updateDoc(doc(studentsCollectionRef, student.id), {
+  await updateDoc(doc(studentsCRef, student.id), {
     count: increment(1),
   });
 };
 
 const dec = (student) => {
   if (student.count > 0) {
-    updateDoc(doc(studentsCollectionRef, student.id), {
+    updateDoc(doc(studentsCRef, student.id), {
       count: increment(-1),
     });
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md row justify-around">
+  <div class="q-pa-md">
     <q-markup-table separator="cell" dense>
       <thead>
         <tr>
@@ -13,8 +13,12 @@
           <td class="text-left">{{ student.name }}</td>
           <td class="text-right">{{ student.count }}</td>
           <td>
-            <q-btn class="q-mr-xs" size="xs" label="+" @click="inc(student)" />
-            <q-btn class="q-ml-xs" size="xs" label="-" @click="dec(student)" />
+            <q-btn class="q-mr-xs" size="xs" @click="inc(student)">
+              <span class="material-icons"> add </span>
+            </q-btn>
+            <q-btn class="q-ml-xs" size="xs" @click="dec(student)">
+              <span class="material-icons"> remove </span>
+            </q-btn>
           </td>
         </tr>
       </tbody>

@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-ma-md">
+  <q-page class="q-ma-md row justify-around">
     <ChoiceTable />
   </q-page>
 </template>

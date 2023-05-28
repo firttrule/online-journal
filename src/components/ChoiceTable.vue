@@ -37,21 +37,6 @@ const studentsCollectionRef = collection(db, "students");
 const students = ref([]);
 
 onMounted(() => {
-  // const querySnapshot = await getDocs(collection(db, "students"));
-  // let fbStudents = [];
-  // querySnapshot.forEach((doc) => {
-  //   // doc.data() is never undefined for query doc snapshots
-  //   console.log(doc.id, " => ", doc.data());
-  //   const student = {
-  //     id: doc.id,
-  //     name: doc.data().name,
-  //     count: doc.data().count,
-  //   };
-
-  //   fbStudents.push(student);
-  // });
-  // students.value = fbStudents;
-
   onSnapshot(studentsCollectionRef, (querySnapshot) => {
     const fbStudents = [];
     querySnapshot.forEach((doc) => {

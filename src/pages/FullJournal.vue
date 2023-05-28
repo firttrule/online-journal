@@ -1,7 +1,6 @@
 <template>
   <q-page class="q-ma-md">
     Полный журнал
-
     <FullTable />
   </q-page>
 </template>
